@@ -32,3 +32,15 @@
 *.app
 /.vs/Sparkle/v17
 /.vs/Sparkle/FileContentIndex
+/Playground/x64/Debug
+/Sparkle/x64/Debug
+/x64/Debug
+/Debug
+/Playground/Debug
+/Playground/Release
+/Playground/x64/Release
+/Release
+/Sparkle/Debug
+/Sparkle/Release
+/Sparkle/x64/Release
+/x64/Release
