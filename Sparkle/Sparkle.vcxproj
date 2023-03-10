@@ -19,10 +19,17 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="src\sparkle.cpp" />
+    <ClInclude Include="includes\sparkle.h" />
+    <ClInclude Include="includes\spk_structures.h" />
+    <ClInclude Include="includes\Structure\Application\spk_application_imodule.h" />
+    <ClInclude Include="includes\Structure\Application\spk_empty_application.h" />
+    <ClInclude Include="includes\Structure\Application\spk_graphical_application.h" />
+    <ClInclude Include="includes\Structure\spk_iostream.h" />
+    <ClInclude Include="includes\Structure\spk_singleton.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="includes\sparkle.h" />
+    <ClCompile Include="src\Structure\spk_iostream.cpp" />
+    <ClCompile Include="src\sparkle.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
@@ -97,6 +104,8 @@
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <PrecompiledHeaderFile>
       </PrecompiledHeaderFile>
+      <LanguageStandard>stdcpp20</LanguageStandard>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
     </ClCompile>
     <Link>
       <SubSystem>
@@ -115,6 +124,8 @@
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <PrecompiledHeaderFile>
       </PrecompiledHeaderFile>
+      <LanguageStandard>stdcpp20</LanguageStandard>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
     </ClCompile>
     <Link>
       <SubSystem>
@@ -133,6 +144,8 @@
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <PrecompiledHeaderFile>
       </PrecompiledHeaderFile>
+      <LanguageStandard>stdcpp20</LanguageStandard>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
     </ClCompile>
     <Link>
       <SubSystem>
@@ -151,6 +164,8 @@
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <PrecompiledHeaderFile>
       </PrecompiledHeaderFile>
+      <LanguageStandard>stdcpp20</LanguageStandard>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
     </ClCompile>
     <Link>
       <SubSystem>

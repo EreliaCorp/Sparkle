@@ -1,6 +1,3 @@
 #pragma once
 
-namespace spr
-{
-	void test();
-}
+#include "spk_structures.h"

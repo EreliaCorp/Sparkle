@@ -1,7 +1,14 @@
 #include "sparkle.h"
 
+#include <iostream>
+#include <vector>
+#include <Windows.h>
+
 int main()
 {
+	spk::cout.setPrefix("Main");
 
-	return (0);
+	spk::GraphicalApplication* app = spk::GraphicalApplication::instanciate("Playground");
+
+	return (app->run());
 }
