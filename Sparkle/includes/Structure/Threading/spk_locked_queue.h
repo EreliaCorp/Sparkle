@@ -38,20 +38,20 @@ namespace spk
 			return _content.back();
 		}
 
-		T pop_front()
+		T&& pop_front()
 		{
 			std::scoped_lock lock(muxQueue);
-			auto t = std::move(_content.front());
+			auto&& t = std::move(_content.front());
 			_content.pop_front();
-			return t;
+			return (std::move(t));
 		}
 
-		T pop_back()
+		T&& pop_back()
 		{
 			std::scoped_lock lock(muxQueue);
-			auto t = std::move(_content.back());
+			auto&& t = std::move(_content.back());
 			_content.pop_back();
-			return t;
+			return (std::move(t));
 		}
 
 		void push_back(const T& item)
