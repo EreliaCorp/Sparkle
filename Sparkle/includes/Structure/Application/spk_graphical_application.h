@@ -1,6 +1,6 @@
 #pragma once
 
-#include "Structure/spk_singleton.h"
+#include "Structure/Utils/spk_singleton.h"
 #include "spk_empty_application.h"
 
 namespace spk
@@ -17,6 +17,6 @@ namespace spk
 
 		}
 	public:
-
+		
 	};
 }

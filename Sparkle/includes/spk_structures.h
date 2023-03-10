@@ -1,8 +1,5 @@
 #pragma once
 
-#include "Structure/spk_iostream.h"
-
-#include "Structure/spk_singleton.h"
-
-#include "Structure\Application\spk_empty_application.h"
-#include "Structure\Application\spk_graphical_application.h"
+#include "Structure\spk_utils.h"
+#include "Structure\spk_threading.h"
+#include "Structure\spk_applications.h"
