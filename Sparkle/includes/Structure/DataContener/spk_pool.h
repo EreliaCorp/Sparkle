@@ -96,7 +96,7 @@ namespace spk
 		}
 
 		template <typename... Args>
-		Object obtain()
+		Object obtain(Args&&... p_args)
 		{
 			return (Object(*this, std::forward<Args>(p_args)...));
 		}
