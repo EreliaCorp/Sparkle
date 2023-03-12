@@ -1,6 +1,15 @@
 #pragma once
 
+#define _USE_MATH_DEFINES 
+#include <cmath>
+
+#ifndef M_PI
+#define M_PI 3.14159265358979323846
+#endif
+
+
 #include <iostream>
+#include <algorithm>
 
 namespace spk
 {
@@ -122,7 +131,7 @@ namespace spk
 
 		float angle() const
 		{
-			float degree = std::atan(static_cast<float>(y) / static_cast<float>(x) * (180 / M_PI);
+			float degree = std::atan((static_cast<float>(y) / static_cast<float>(x)) * (180 / M_PI));
 
 			if (x >= 0 && y >= 0)
 				return (degree);
@@ -155,12 +164,14 @@ namespace spk
 
 		bool operator == (const IVector2& delta) const
 		{
-			return ((x == delta.x && y == delta.y) ? true : false);
+			return (x == delta.x && y == delta.y);
 		}
+
 		bool operator != (const IVector2& delta) const
 		{
-			return ((x == delta.x && y == delta.y) ? false : true);
+			return (x == delta.x && y == delta.y);
 		}
+
 		bool operator < (const IVector2& p_other) const
 		{
 			if (y < p_other.y)
@@ -169,6 +180,7 @@ namespace spk
 				return (true);
 			return (false);
 		}
+
 		bool operator > (const IVector2& p_other) const
 		{
 			if (y > p_other.y)
@@ -177,47 +189,19 @@ namespace spk
 				return (true);
 			return (false);
 		}
+
 		bool operator <= (const IVector2& p_other) const
 		{
-			if (this->operator == (p_other) == true || this->operator < (p_other) == true)
+			if (x <= p_other.x && y <= p_other.y)
 				return (true);
 			return (false);
 		}
+
 		bool operator >= (const IVector2& p_other) const
 		{
-			if (this->operator == (p_other) == true || this->operator > (p_other) == true)
+			if (x >= p_other.x && y >= p_other.y)
 				return (true);
 			return (false);
-		}
-
-		static IVector2 max(const IVector2& p_lhd, const IVector2& p_rhd)
-		{
-			IVector2 result;
-
-			result.x = std::max(p_lhd.x, p_rhd.x);
-			result.y = std::max(p_lhd.y, p_rhd.y);
-
-			return (result);
-		}
-
-		static IVector2 min(const IVector2& p_lhd, const IVector2& p_rhd)
-		{
-			IVector2 result;
-
-			result.x = std::min(p_lhd.x, p_rhd.x);
-			result.y = std::min(p_lhd.y, p_rhd.y);
-
-			return (result);
-		}
-
-		static IVector2 clamp(const IVector2& p_min, const IVector2& p_value, const IVector2& p_max)
-		{
-			IVector2 result;
-
-			result.x = std::max(p_min.x, std::min(p_max.x, p_value.x));
-			result.y = std::max(p_min.y, std::min(p_max.y, p_value.y));
-
-			return (result);
 		}
 
 		IVector2 floor()

@@ -21,21 +21,30 @@
   <ItemGroup>
     <ClInclude Include="includes\sparkle.h" />
     <ClInclude Include="includes\spk_structures.h" />
-    <ClInclude Include="includes\Structure\Application\Module\spk_application_imodule.h" />
-    <ClInclude Include="includes\Structure\Application\spk_empty_application.h" />
-    <ClInclude Include="includes\Structure\Application\spk_graphical_application.h" />
-    <ClInclude Include="includes\Structure\Application\spk_modules.h" />
+    <ClInclude Include="includes\Structure\Application\spk_application.h" />
+    <ClInclude Include="includes\Structure\DataContener\spk_data_buffer.h" />
+    <ClInclude Include="includes\Structure\Graphics\spk_color.h" />
+    <ClInclude Include="includes\Structure\Input\spk_input_status.h" />
+    <ClInclude Include="includes\Structure\Input\spk_keyboard.h" />
+    <ClInclude Include="includes\Structure\Input\spk_mouse.h" />
+    <ClInclude Include="includes\Structure\Mathematic\spk_vector2.h" />
     <ClInclude Include="includes\Structure\spk_applications.h" />
+    <ClInclude Include="includes\Structure\spk_data_contener.h" />
+    <ClInclude Include="includes\Structure\spk_graphics.h" />
+    <ClInclude Include="includes\Structure\spk_mathematic.h" />
     <ClInclude Include="includes\Structure\spk_threading.h" />
     <ClInclude Include="includes\Structure\spk_utils.h" />
     <ClInclude Include="includes\Structure\Utils\spk_iostream.h" />
     <ClInclude Include="includes\Structure\Threading\spk_locked_queue.h" />
+    <ClInclude Include="includes\Structure\DataContener\spk_pool.h" />
     <ClInclude Include="includes\Structure\Utils\spk_singleton.h" />
     <ClInclude Include="includes\Structure\Threading\spk_thread.h" />
-    <ClInclude Include="includes\Structure\Threading\spk_worker_pool.h" />
+    <ClInclude Include="includes\Structure\Threading\spk_workers.h" />
+    <ClInclude Include="includes\Structure\Utils\spk_timer.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\sparkle.cpp" />
+    <ClCompile Include="src\spk_timer.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
@@ -91,15 +100,23 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <IncludePath>includes;$(IncludePath)</IncludePath>
+    <OutDir>$(SolutionDir)Lib\$(Configuration)\$(LibrariesArchitecture)\</OutDir>
+    <IntDir>$(SolutionDir)Obj\$(Configuration)\$(LibrariesArchitecture)\</IntDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <IncludePath>includes;$(IncludePath)</IncludePath>
+    <OutDir>$(SolutionDir)Lib\$(Configuration)\$(LibrariesArchitecture)\</OutDir>
+    <IntDir>$(SolutionDir)Obj\$(Configuration)\$(LibrariesArchitecture)\</IntDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <IncludePath>includes;$(IncludePath)</IncludePath>
+    <OutDir>$(SolutionDir)Lib\$(Configuration)\$(LibrariesArchitecture)\</OutDir>
+    <IntDir>$(SolutionDir)Obj\$(Configuration)\$(LibrariesArchitecture)\</IntDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <IncludePath>includes;$(IncludePath)</IncludePath>
+    <OutDir>$(SolutionDir)Lib\$(Configuration)\$(LibrariesArchitecture)\</OutDir>
+    <IntDir>$(SolutionDir)Obj\$(Configuration)\$(LibrariesArchitecture)\</IntDir>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>

@@ -1,7 +1,10 @@
 #pragma once
 
 #include <shared_mutex>
+#include <mutex>
 #include <deque>
+
+#include "Structure/Utils/spk_iostream.h"
 
 namespace spk
 {
@@ -30,12 +33,11 @@ namespace spk
 		template <typename... Args>
 		TElement* _obtain(Args&&... p_args)
 		{
-			std::lock_guard<std::shared_mutex> lock(_mutex);
-
 			TElement* result = nullptr;
 
 			if (_content.empty() == false)
 			{
+				std::lock_guard<std::shared_mutex> lock(_mutex);
 				result = _content.back();
 				*result = TElement(std::forward<Args>(p_args)...);
 				_content.pop_back();

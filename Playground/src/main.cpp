@@ -2,5 +2,7 @@
 
 int main()
 {
-	return (0);
+	spk::Application* app = spk::Application::instanciate(spk::Application::Configuration::Graphical);
+
+	return (app->run());
 }

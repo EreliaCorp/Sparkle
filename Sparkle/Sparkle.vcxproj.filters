@@ -27,19 +27,10 @@
     <ClInclude Include="includes\Structure\Utils\spk_singleton.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="includes\Structure\Application\spk_empty_application.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="includes\Structure\Application\Module\spk_application_imodule.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="includes\Structure\Application\spk_graphical_application.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="includes\Structure\Threading\spk_thread.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="includes\Structure\Threading\spk_worker_pool.h">
+    <ClInclude Include="includes\Structure\Threading\spk_workers.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="includes\Structure\Threading\spk_locked_queue.h">
@@ -54,12 +45,48 @@
     <ClInclude Include="includes\Structure\spk_utils.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="includes\Structure\Application\spk_modules.h">
+    <ClInclude Include="includes\Structure\DataContener\spk_pool.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="includes\Structure\DataContener\spk_data_buffer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="includes\Structure\Graphics\spk_color.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="includes\Structure\spk_graphics.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="includes\Structure\spk_data_contener.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="includes\Structure\Mathematic\spk_vector2.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="includes\Structure\spk_mathematic.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="includes\Structure\Input\spk_keyboard.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="includes\Structure\Input\spk_input_status.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="includes\Structure\Input\spk_mouse.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="includes\Structure\Utils\spk_timer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="includes\Structure\Application\spk_application.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\sparkle.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\spk_timer.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

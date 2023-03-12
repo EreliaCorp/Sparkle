@@ -21,14 +21,11 @@ namespace spk
         std::thread _thread;
         std::promise<bool> _starterSignal;
 
-        ~Thread() {
-            join();
-        }
     public:
-        template <typename Func, typename... Args>
-        Thread(std::string p_message, Func&& p_func, Args&&... p_args)
+        template <typename Funct, typename... Args>
+        Thread(std::string p_message, Funct&& p_func, Args&&... p_args)
             : _message(std::move(p_message)),
-            _funct(std::bind(std::forward<Func>(p_func), std::forward<Args>(p_args)...)),
+            _funct(std::bind(std::forward<Funct>(p_func), std::forward<Args>(p_args)...)),
             _starterSignal() {
             auto wrapper = [this]() {
                 spk::cout.setPrefix("\033[0;37m" + _message);
@@ -39,8 +36,12 @@ namespace spk
             _thread = std::thread(wrapper);
         }
 
-        template <typename Func, typename... Args>
-        Thread(LaunchMethod p_launchMethod, std::string p_message, Func&& p_func, Args&&... p_args)
+        ~Thread() {
+            join();
+        }
+
+        template <typename Funct, typename... Args>
+        Thread(LaunchMethod p_launchMethod, std::string p_message, Funct&& p_func, Args&&... p_args)
             : Thread(p_message, p_func, p_args...) {
             if (p_launchMethod == LaunchMethod::Immediate) {
                 start();
