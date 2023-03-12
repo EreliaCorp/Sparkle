@@ -46,7 +46,6 @@ namespace spk
 		return (false);
 	}
 
-
 	unsigned long Timer::elapsedTime()
 	{
 		return (spk::Application::instance()->time() - _startingTime);

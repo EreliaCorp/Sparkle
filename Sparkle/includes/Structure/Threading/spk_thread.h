@@ -16,20 +16,20 @@ namespace spk
         enum class LaunchMethod { Delayed, Immediate };
 
     private:
-        std::string _message;
+        std::string _threadName;
         std::function<void()> _funct;
         std::thread _thread;
         std::promise<bool> _starterSignal;
 
     public:
         template <typename Funct, typename... Args>
-        Thread(std::string p_message, Funct&& p_func, Args&&... p_args)
-            : _message(std::move(p_message)),
+        Thread(std::string p_threadName, Funct&& p_func, Args&&... p_args)
+            : _threadName(std::move(p_threadName)),
             _funct(std::bind(std::forward<Funct>(p_func), std::forward<Args>(p_args)...)),
             _starterSignal() {
             auto wrapper = [this]() {
-                spk::cout.setPrefix("\033[0;37m" + _message);
-                spk::cerr.setPrefix("\033[1;31m" + _message);
+                spk::cout.setPrefix(_threadName);
+                spk::cerr.setPrefix(_threadName);
                 _starterSignal.get_future().wait();
                 _funct();
             };
@@ -41,8 +41,9 @@ namespace spk
         }
 
         template <typename Funct, typename... Args>
-        Thread(LaunchMethod p_launchMethod, std::string p_message, Funct&& p_func, Args&&... p_args)
-            : Thread(p_message, p_func, p_args...) {
+        Thread(LaunchMethod p_launchMethod, std::string p_threadName, Funct&& p_func, Args&&... p_args) :
+                Thread(p_threadName, p_func, p_args...)
+            {
             if (p_launchMethod == LaunchMethod::Immediate) {
                 start();
             }

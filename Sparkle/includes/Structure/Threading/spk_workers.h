@@ -99,6 +99,7 @@ namespace spk
 	public:
 		PersistentTaskWorker(std::string p_workerName)
 		{
+		spk::cout << "Creating PersistantTaskWorker with name " << p_workerName << " with size : " << p_workerName.size() << std::endl;
 			_thread = new spk::Thread(spk::Thread::LaunchMethod::Delayed, p_workerName, _threadExecutiveFunct);
 		}
 

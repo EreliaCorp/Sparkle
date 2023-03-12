@@ -20,7 +20,8 @@ namespace spk
 
         public:
             IOBuffer(std::ostream& p_outputStream, const std::string& p_prefix) :
-                _outputStream(p_outputStream)
+                _outputStream(p_outputStream),
+                _prefix("")
             {
                 setPrefix(p_prefix);
             }
@@ -40,7 +41,9 @@ namespace spk
             {
                 _mutex.lock();
                 if (_prefix.size() != 0)
+                {
                     _outputStream << "[" << std::string(_maximumPrefixSize - _prefix.size(), ' ') << _prefix << "] - ";
+                }
                 _outputStream << str();
                 str("");
                 _outputStream.flush();
@@ -51,7 +54,9 @@ namespace spk
                 _prefix = p_prefix;
                 _mutex.lock();
                 if (_prefix.size() > _maximumPrefixSize)
+                {
                     _maximumPrefixSize = _prefix.size();
+                }
                 _mutex.unlock();
             }
         };

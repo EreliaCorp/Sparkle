@@ -106,6 +106,7 @@ namespace spk
 
 		void _runMainThread()
 		{
+			spk::cout.setPrefix("RenderThread");
 			while (_running == true)
 			{
 				_jobPool.execute();
