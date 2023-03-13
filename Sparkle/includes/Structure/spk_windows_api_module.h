@@ -1,10 +1,10 @@
 #pragma once
 
 #include <Windows.h>
-#include "Structure/Threading/spk_locked_queue.h"
-#include "Structure/DataContener/spk_pool.h"
-#include "Structure/DataContener/spk_data_buffer.h"
-#include "Structure/Utils/spk_singleton.h"
+#include "Structure/spk_locked_queue.h"
+#include "Structure/spk_pool.h"
+#include "Structure/spk_data_buffer.h"
+#include "Structure/spk_singleton.h"
 
 namespace spk
 {

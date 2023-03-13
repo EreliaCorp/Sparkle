@@ -5,7 +5,7 @@
 #include <thread>
 #include <future>
 
-#include "Structure/Utils/spk_iostream.h"
+#include "Structure/spk_iostream.h"
 
 namespace spk
 {

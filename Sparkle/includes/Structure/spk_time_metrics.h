@@ -1,8 +1,8 @@
 #pragma once
 
 #include <chrono>
-#include "Structure/Utils/spk_singleton.h"
-#include "Structure/Time/spk_timer.h"
+#include "Structure/spk_singleton.h"
+#include "Structure/spk_timer.h"
 
 namespace spk
 {

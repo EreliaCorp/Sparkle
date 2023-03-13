@@ -3,7 +3,7 @@
 #include "spk_imessage_consumer.h"
 #include "spk_windows_api_module.h"
 
-#include "Structure/Application/spk_application.h"
+#include "Structure/spk_application.h"
 
 namespace spk
 {

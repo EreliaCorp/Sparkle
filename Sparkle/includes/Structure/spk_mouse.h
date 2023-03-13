@@ -5,8 +5,8 @@
 #include <map>
 #include <string>
 #include "spk_input_status.h"
-#include "Structure/Mathematic/spk_vector2.h"
-#include "Structure/Utils/spk_singleton.h"
+#include "Structure/spk_vector2.h"
+#include "Structure/spk_singleton.h"
 
 namespace spk
 {

@@ -3,8 +3,8 @@
 #include <Windows.h>
 #include "spk_imessage_consumer.h"
 
-#include "Structure/Graphics/spk_color.h"
-#include "Structure/Mathematic/spk_vector2.h"
+#include "Structure/spk_color.h"
+#include "Structure/spk_vector2.h"
 
 #include "spk_windows_api_module.h"
 

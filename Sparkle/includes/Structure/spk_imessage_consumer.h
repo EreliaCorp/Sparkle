@@ -1,8 +1,8 @@
 #pragma once
 
-#include "Structure/DataContener/spk_pool.h"
-#include "Structure/DataContener/spk_data_buffer.h"
-#include "Structure/Threading/spk_locked_queue.h"
+#include "Structure/spk_pool.h"
+#include "Structure/spk_data_buffer.h"
+#include "Structure/spk_locked_queue.h"
 
 namespace spk
 {

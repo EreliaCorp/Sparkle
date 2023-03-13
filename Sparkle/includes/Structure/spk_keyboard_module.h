@@ -1,6 +1,6 @@
 #pragma once
 
-#include "Structure/Input/spk_keyboard.h"
+#include "Structure/spk_keyboard.h"
 #include "spk_imessage_consumer.h"
 #include "spk_windows_api_module.h"
 
