@@ -29,7 +29,7 @@ namespace spk
 
 			Default& operator=(const TType& p_val) {
 				_value = p_val;
-				for (jgl::Size_t i = 0; i < _subscribedValues.size(); i++)
+				for (size_t i = 0; i < _subscribedValues.size(); i++)
 				{
 					_subscribedValues[i]->_notifyDefaultValueEdition();
 				}
@@ -59,14 +59,14 @@ namespace spk
 		};
 
 	private:
-		jgl::Bool _isDefaultValue = false;
+		bool _isDefaultValue = false;
 		Default* _defaultValue;
 		TType _value;
 		std::vector<std::function<void()>> _callbacks;
 
 		void _executeCallback()
 		{
-			for (jgl::Size_t i = 0; i < _callbacks.size(); i++)
+			for (size_t i = 0; i < _callbacks.size(); i++)
 			{
 				if (_callbacks[i] != nullptr)
 					_callbacks[i]();
