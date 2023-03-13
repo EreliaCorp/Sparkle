@@ -3,86 +3,31 @@
 #include <map>
 #include <Windows.h>
 #include "Structure/Utils/spk_singleton.h"
-#include "Structure/Utils/spk_timer.h"
+#include "Structure/Time/spk_timer.h"
 #include "Structure/Threading/spk_workers.h"
 
 namespace spk
 {
-	class Application : public spk::Singleton<Application>
+	class Application
 	{
-		friend class spk::Singleton<Application>;
 	public:
-		enum class Configuration
+		class Module
 		{
-			Graphical,
-			Console
+		private:
+
+		public:
+			virtual void update() = 0;
 		};
 
 	private:
 		int _errorCode;
+
 		bool _running;
-		unsigned long _time;
-		size_t _renderTicks;
-		size_t _updateTicks;
-		spk::Timer _timeTimer = spk::Timer(1000);
 
 		spk::JobPool _jobPool;
 		std::map<std::string, spk::PersistentTaskWorker*> _taskWorkers;
 
-		spk::PersistentTaskWorker* _getWorker(std::string p_workerName)
-		{
-			if (_taskWorkers.count(p_workerName) == 0)
-				_taskWorkers[p_workerName] = new spk::PersistentTaskWorker(p_workerName);
-
-			return (_taskWorkers[p_workerName]);
-		}
-
-		void _addJob(std::function<void()> p_funct)
-		{
-			_jobPool.addJob(p_funct);
-		}
-
-		void _addJob(std::string p_workerName, std::function<void()> p_funct)
-		{
-			_getWorker(p_workerName)->addJob(p_funct);
-		}
-
-		Application(Configuration p_configuration)
-		{
-			switch (p_configuration)
-			{
-			case Configuration::Console:
-			{
-
-				break;
-			}
-			case Configuration::Graphical:
-			{
-				_addJob([&]() {
-						_time = static_cast<unsigned long>(GetTickCount64());
-						_renderTicks++;
-					});
-				_addJob([&]() {
-					if (_timeTimer.isRunning() == false)
-					{
-						_timeTimer.start();
-
-						spk::cout << "Render : " << _renderTicks << std::endl;
-						spk::cout << "Update : " << _updateTicks << std::endl;
-						_updateTicks = 0;
-						_renderTicks = 0;
-
-					}
-					});
-
-				_addJob("UpdaterThread", [&]() {
-					_updateTicks++;
-					});
-
-				break;
-			}
-			}
-		}
+		std::vector<Module*> _modules;
 
 		void _startWorker()
 		{
@@ -113,7 +58,41 @@ namespace spk
 			}
 		}
 
+	protected:
+		spk::PersistentTaskWorker* _getWorker(std::string p_workerName)
+		{
+			if (_taskWorkers.count(p_workerName) == 0)
+				_taskWorkers[p_workerName] = new spk::PersistentTaskWorker(p_workerName);
+
+			return (_taskWorkers[p_workerName]);
+		}
+
+		void _addJob(std::function<void()> p_funct)
+		{
+			_jobPool.addJob(p_funct);
+		}
+
+		void _addJob(std::string p_workerName, std::function<void()> p_funct)
+		{
+			_getWorker(p_workerName)->addJob(p_funct);
+		}
+
 	public:
+		Application() :
+			_errorCode(0),
+			_running(false)
+		{
+
+		}
+
+		~Application()
+		{
+			for (size_t i = 0; i < _modules.size(); i++)
+			{
+				delete _modules[i];
+			}
+		}
+
 		int run()
 		{
 			_errorCode = 0;
@@ -133,7 +112,5 @@ namespace spk
 			_errorCode = p_errorCode;
 			_running = false;
 		}
-
-		unsigned long time() { return (_time); }
 	};
 }

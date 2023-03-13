@@ -5,15 +5,12 @@
 #include <map>
 #include <string>
 #include "spk_input_status.h"
+#include "Structure/Utils/spk_singleton.h"
 
 namespace spk
 {
-    class KeyboardModule;
-
-    class Keyboard
+    class Keyboard : public spk::Singleton<Keyboard>
     {
-        friend class spk::KeyboardModule;
-
     public:
         static const size_t C_NB_KEY = 255;
 
@@ -308,14 +305,14 @@ namespace spk
         void _updateEntry(uint8_t p_entry) {
             _entry = p_entry;
         }
-
-    public:
         Keyboard() :
             _entry('\0')
         {
             for (size_t i = 0; i < C_NB_KEY; i++)
                 _keys[i] = InputStatus::Up;
         }
+
+    public:
         const InputStatus& getKey(Keyboard::Key p_key) const
         {
             return (_keys[p_key]);

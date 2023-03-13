@@ -78,7 +78,6 @@ namespace spk
 		template <typename Funct, typename... Args>
 		void addJob(Funct&& p_funct, Args&&... p_args)
 		{
-			spk::cout << __FUNCTION__ << "::" << __LINE__ << std::endl;
 			_jobs.push_back(std::bind(std::forward<Funct>(p_funct), std::forward<Args>(p_args)...));
 		}
 	};
@@ -99,7 +98,6 @@ namespace spk
 	public:
 		PersistentTaskWorker(std::string p_workerName)
 		{
-		spk::cout << "Creating PersistantTaskWorker with name " << p_workerName << " with size : " << p_workerName.size() << std::endl;
 			_thread = new spk::Thread(spk::Thread::LaunchMethod::Delayed, p_workerName, _threadExecutiveFunct);
 		}
 
@@ -128,7 +126,6 @@ namespace spk
 		template <typename Funct, typename... Args>
 		void addJob(Funct&& p_funct, Args&&... p_args)
 		{
-			spk::cout << __FUNCTION__ << "::" << __LINE__ << std::endl;
 			_jobPool.addJob(std::forward<Funct>(p_funct), std::forward<Args>(p_args)...);
 		}
 	};

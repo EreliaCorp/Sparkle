@@ -33,6 +33,7 @@
     <ClInclude Include="includes\Structure\spk_graphics.h" />
     <ClInclude Include="includes\Structure\spk_mathematic.h" />
     <ClInclude Include="includes\Structure\spk_threading.h" />
+    <ClInclude Include="includes\Structure\spk_time.h" />
     <ClInclude Include="includes\Structure\spk_utils.h" />
     <ClInclude Include="includes\Structure\Utils\spk_iostream.h" />
     <ClInclude Include="includes\Structure\Threading\spk_locked_queue.h" />
@@ -40,11 +41,11 @@
     <ClInclude Include="includes\Structure\Utils\spk_singleton.h" />
     <ClInclude Include="includes\Structure\Threading\spk_thread.h" />
     <ClInclude Include="includes\Structure\Threading\spk_workers.h" />
-    <ClInclude Include="includes\Structure\Utils\spk_timer.h" />
+    <ClInclude Include="includes\Structure\Time\spk_timer.h" />
+    <ClInclude Include="includes\Structure\Time\spk_time_metrics.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\sparkle.cpp" />
-    <ClCompile Include="src\spk_timer.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
@@ -129,6 +130,7 @@
       </PrecompiledHeaderFile>
       <LanguageStandard>stdcpp20</LanguageStandard>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
     </ClCompile>
     <Link>
       <SubSystem>
@@ -169,6 +171,7 @@
       </PrecompiledHeaderFile>
       <LanguageStandard>stdcpp20</LanguageStandard>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
     </ClCompile>
     <Link>
       <SubSystem>

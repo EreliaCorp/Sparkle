@@ -75,18 +75,21 @@
     <ClInclude Include="includes\Structure\Input\spk_mouse.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="includes\Structure\Utils\spk_timer.h">
+    <ClInclude Include="includes\Structure\Time\spk_timer.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="includes\Structure\Application\spk_application.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="includes\Structure\Time\spk_time_metrics.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="includes\Structure\spk_time.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\sparkle.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="src\spk_timer.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

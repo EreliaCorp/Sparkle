@@ -6,15 +6,12 @@
 #include <string>
 #include "spk_input_status.h"
 #include "Structure/Mathematic/spk_vector2.h"
+#include "Structure/Utils/spk_singleton.h"
 
 namespace spk
 {
-	class MouseModule;
-
-	class Mouse
+	class Mouse : public spk::Singleton<Mouse>
 	{
-		friend class spk::MouseModule;
-
 	public:
 		enum Button
 		{
@@ -46,13 +43,14 @@ namespace spk
 			}
 		}
 
-	public:
 		Mouse()
 		{
 			_wheel = 0;
 			for (size_t i = 0; i < C_NB_BUTTON; i++)
 				_buttons[i] = spk::InputStatus::Up;
 		}
+
+	public:
 		
 		float wheel() const
 		{
