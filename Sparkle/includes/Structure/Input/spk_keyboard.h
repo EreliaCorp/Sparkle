@@ -11,6 +11,8 @@ namespace spk
 {
     class Keyboard : public spk::Singleton<Keyboard>
     {
+        friend class spk::Singleton<Keyboard>;
+        friend class KeyboardModule;
     public:
         static const size_t C_NB_KEY = 255;
 

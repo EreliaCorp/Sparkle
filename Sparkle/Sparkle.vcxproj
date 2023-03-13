@@ -21,7 +21,14 @@
   <ItemGroup>
     <ClInclude Include="includes\sparkle.h" />
     <ClInclude Include="includes\spk_structures.h" />
+    <ClInclude Include="includes\Structure\Application\Module\spk_imessage_consumer.h" />
+    <ClInclude Include="includes\Structure\Application\Module\spk_keyboard_module.h" />
+    <ClInclude Include="includes\Structure\Application\Module\spk_mouse_module.h" />
+    <ClInclude Include="includes\Structure\Application\Module\spk_system_module.h" />
+    <ClInclude Include="includes\Structure\Application\Module\spk_windows_api_module.h" />
+    <ClInclude Include="includes\Structure\Application\Module\spk_window_module.h" />
     <ClInclude Include="includes\Structure\Application\spk_application.h" />
+    <ClInclude Include="includes\Structure\Application\spk_modules.h" />
     <ClInclude Include="includes\Structure\DataContener\spk_data_buffer.h" />
     <ClInclude Include="includes\Structure\Graphics\spk_color.h" />
     <ClInclude Include="includes\Structure\Input\spk_input_status.h" />

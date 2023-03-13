@@ -12,6 +12,8 @@ namespace spk
 {
 	class Mouse : public spk::Singleton<Mouse>
 	{
+		friend class spk::Singleton<Mouse>;
+		friend class MouseModule;
 	public:
 		enum Button
 		{
