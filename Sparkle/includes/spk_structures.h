@@ -13,6 +13,7 @@
 #include "Structure\spk_pool.h"
 #include "Structure\spk_singleton.h"
 #include "Structure\spk_system_module.h"
+#include "Structure\spk_json_parser.h"
 #include "Structure\spk_thread.h"
 #include "Structure\spk_timer.h"
 #include "Structure\spk_time_metrics.h"

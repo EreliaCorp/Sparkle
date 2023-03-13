@@ -23,9 +23,14 @@
     <ClInclude Include="includes\spk_structures.h" />
     <ClInclude Include="includes\Structure\spk_graphical_application.h" />
     <ClInclude Include="includes\Structure\spk_imessage_consumer.h" />
+    <ClInclude Include="includes\Structure\spk_inheritance_system.h" />
+    <ClInclude Include="includes\Structure\spk_iwidget.h" />
+    <ClInclude Include="includes\Structure\spk_json_parser.h" />
     <ClInclude Include="includes\Structure\spk_keyboard_module.h" />
     <ClInclude Include="includes\Structure\spk_mouse_module.h" />
     <ClInclude Include="includes\Structure\spk_system_module.h" />
+    <ClInclude Include="includes\Structure\spk_value.h" />
+    <ClInclude Include="includes\Structure\spk_widget_module.h" />
     <ClInclude Include="includes\Structure\spk_windows_api_module.h" />
     <ClInclude Include="includes\Structure\spk_window_module.h" />
     <ClInclude Include="includes\Structure\spk_application.h" />

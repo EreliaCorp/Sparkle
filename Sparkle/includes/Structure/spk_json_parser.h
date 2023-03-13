@@ -263,7 +263,7 @@ namespace spk
 		{
 			return (std::get<std::string>(get(key)));
 		}
-		float getFloatingPoint(std::string key)
+		double getFloatingPoint(std::string key)
 		{
 			return (std::get<double>(get(key)));
 		}
