@@ -25,6 +25,7 @@
     <ClInclude Include="includes\spk_structures.h" />
     <ClInclude Include="includes\Structure\spk_activity.h" />
     <ClInclude Include="includes\Structure\spk_activity_manager.h" />
+    <ClInclude Include="includes\Structure\spk_client.h" />
     <ClInclude Include="includes\Structure\spk_font.h" />
     <ClInclude Include="includes\Structure\spk_graphical_application.h" />
     <ClInclude Include="includes\Structure\spk_image.h" />
@@ -42,6 +43,7 @@
     <ClInclude Include="includes\Structure\spk_shader_atlas.h" />
     <ClInclude Include="includes\Structure\spk_sprite_sheet.h" />
     <ClInclude Include="includes\Structure\spk_system_module.h" />
+    <ClInclude Include="includes\Structure\spk_texture_atlas.h" />
     <ClInclude Include="includes\Structure\spk_text_alignment.h" />
     <ClInclude Include="includes\Structure\spk_translation_atlas.h" />
     <ClInclude Include="includes\Structure\spk_value.h" />
