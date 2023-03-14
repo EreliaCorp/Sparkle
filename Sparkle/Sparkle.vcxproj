@@ -20,17 +20,36 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="includes\sparkle.h" />
+    <ClInclude Include="includes\spk_basic_functions.h" />
+    <ClInclude Include="includes\spk_opengl.h" />
     <ClInclude Include="includes\spk_structures.h" />
+    <ClInclude Include="includes\Structure\spk_activity.h" />
+    <ClInclude Include="includes\Structure\spk_activity_manager.h" />
+    <ClInclude Include="includes\Structure\spk_font.h" />
     <ClInclude Include="includes\Structure\spk_graphical_application.h" />
+    <ClInclude Include="includes\Structure\spk_image.h" />
+    <ClInclude Include="includes\Structure\spk_image_output.h" />
     <ClInclude Include="includes\Structure\spk_imessage_consumer.h" />
     <ClInclude Include="includes\Structure\spk_inheritance_system.h" />
+    <ClInclude Include="includes\Structure\spk_input_controller.h" />
     <ClInclude Include="includes\Structure\spk_iwidget.h" />
     <ClInclude Include="includes\Structure\spk_json_parser.h" />
     <ClInclude Include="includes\Structure\spk_keyboard_module.h" />
     <ClInclude Include="includes\Structure\spk_mouse_module.h" />
+    <ClInclude Include="includes\Structure\spk_observer.h" />
+    <ClInclude Include="includes\Structure\spk_perlin.h" />
+    <ClInclude Include="includes\Structure\spk_shader.h" />
+    <ClInclude Include="includes\Structure\spk_shader_atlas.h" />
+    <ClInclude Include="includes\Structure\spk_sprite_sheet.h" />
     <ClInclude Include="includes\Structure\spk_system_module.h" />
+    <ClInclude Include="includes\Structure\spk_text_alignment.h" />
+    <ClInclude Include="includes\Structure\spk_translation_atlas.h" />
     <ClInclude Include="includes\Structure\spk_value.h" />
+    <ClInclude Include="includes\Structure\spk_vector3.h" />
+    <ClInclude Include="includes\Structure\spk_vector4.h" />
+    <ClInclude Include="includes\Structure\spk_viewport.h" />
     <ClInclude Include="includes\Structure\spk_widget_module.h" />
+    <ClInclude Include="includes\Structure\spk_window.h" />
     <ClInclude Include="includes\Structure\spk_windows_api_module.h" />
     <ClInclude Include="includes\Structure\spk_window_module.h" />
     <ClInclude Include="includes\Structure\spk_application.h" />
@@ -108,21 +127,25 @@
     <IncludePath>includes;$(IncludePath)</IncludePath>
     <OutDir>$(SolutionDir)Lib\$(Configuration)\$(LibrariesArchitecture)\</OutDir>
     <IntDir>$(SolutionDir)Obj\$(Configuration)\$(LibrariesArchitecture)\</IntDir>
+    <CodeAnalysisRuleSet>NativeMinimumRules.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <IncludePath>includes;$(IncludePath)</IncludePath>
     <OutDir>$(SolutionDir)Lib\$(Configuration)\$(LibrariesArchitecture)\</OutDir>
     <IntDir>$(SolutionDir)Obj\$(Configuration)\$(LibrariesArchitecture)\</IntDir>
+    <CodeAnalysisRuleSet>NativeMinimumRules.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <IncludePath>includes;$(IncludePath)</IncludePath>
     <OutDir>$(SolutionDir)Lib\$(Configuration)\$(LibrariesArchitecture)\</OutDir>
     <IntDir>$(SolutionDir)Obj\$(Configuration)\$(LibrariesArchitecture)\</IntDir>
+    <CodeAnalysisRuleSet>NativeMinimumRules.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <IncludePath>includes;$(IncludePath)</IncludePath>
     <OutDir>$(SolutionDir)Lib\$(Configuration)\$(LibrariesArchitecture)\</OutDir>
     <IntDir>$(SolutionDir)Obj\$(Configuration)\$(LibrariesArchitecture)\</IntDir>
+    <CodeAnalysisRuleSet>NativeMinimumRules.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
