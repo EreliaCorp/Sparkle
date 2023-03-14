@@ -148,9 +148,9 @@ namespace spk
 				fontGlyphData.atlas[c] = data;
 			}
 
-			for (int y = 0; y < height; y++)
+			for (size_t y = 0; y < height; y++)
 			{
-				for (int x = 0; x < width; x++)
+				for (size_t x = 0; x < width; x++)
 				{
 					size_t index = x + y * width;
 					if (atlasData[index] != 0x00)

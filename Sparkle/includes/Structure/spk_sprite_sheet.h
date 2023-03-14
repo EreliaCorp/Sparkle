@@ -37,7 +37,7 @@ namespace spk
 		 
 		const size_t& spriteID(Vector2UInt p_spriteValue) const
 		{
-			return ((_size.x * p_spriteValue.y) + p_spriteValue.x);
+			return ((static_cast<size_t>(_size.x) * static_cast<size_t>(p_spriteValue.y)) + static_cast<size_t>(p_spriteValue.x));
 		}
 		const Vector2& sprite(size_t index) const
 		{
