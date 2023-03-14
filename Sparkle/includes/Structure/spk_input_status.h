@@ -9,4 +9,5 @@ namespace spk
 		Up = 2,
 		Pressed = 3
 	};
+
 }
