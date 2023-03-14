@@ -8,6 +8,7 @@ namespace spk
 	class WidgetModule
 	{
 	private:
+		std::vector<IWidget*> _widgets;
 
 	public:
 		WidgetModule()
@@ -17,12 +18,30 @@ namespace spk
 
 		void render()
 		{
-			spk::cout << __FUNCTION__ << "::" << __LINE__ << std::endl;
+			for (size_t i = 0; i < _widgets.size(); i++)
+			{
+				if (_widgets[i]->isActive() == true)
+					_widgets[i]->_render();
+			}
 		}
 
 		void update()
 		{
-			spk::cout << __FUNCTION__ << "::" << __LINE__ << std::endl;
+			for (size_t i = 0; i < _widgets.size(); i++)
+			{
+				if (_widgets[i]->isActive() == true)
+					_widgets[i]->_update();
+			}
+		}
+
+		template <typename TChildrenType, typename ... Args>
+		TChildrenType* addWidget(Args&& ...p_args)
+		{
+			TChildrenType* result = new TChildrenType(std::forward<Args>(p_args)...);
+
+			_widgets.push_back(result);
+
+			return (result);
 		}
 	};
 }

@@ -3,6 +3,7 @@
 #include "Structure/spk_vector2.h"
 #include "Structure/spk_inheritance_system.h"
 #include "Structure/spk_value.h"
+#include "Structure/spk_viewport.h"
 
 namespace spk
 {
@@ -12,6 +13,9 @@ namespace spk
 	private:
 		spk::InheritanceSystem<IWidget> _inheritanceSystem;
 
+		Viewport _viewport;
+
+		bool _isActive = false;
 		spk::Vector2Int _anchor;
 		spk::Vector2Int _size;
 
@@ -21,18 +25,22 @@ namespace spk
 
 		void _render()
 		{
+			if (_inheritanceSystem.parent() != nullptr)
+				_inheritanceSystem.parent()->viewport()->use();
 			_onRender();
 			for (size_t i = 0; i < _inheritanceSystem.childrens().size(); i++)
 			{
-				_inheritanceSystem.childrens()[i]->_render();
+				if (_inheritanceSystem.childrens()[i]->isActive() == true)
+					_inheritanceSystem.childrens()[i]->_render();
 			}
 		}
 		bool _update()
 		{
 			for (size_t i = 0; i < _inheritanceSystem.childrens().size(); i++)
 			{
-				if (_inheritanceSystem.childrens()[i]->_update() == true)
-					return (true);
+				if (_inheritanceSystem.childrens()[i]->isActive() == true)
+					if (_inheritanceSystem.childrens()[i]->_update() == true)
+						return (true);
 			}
 			return (_onUpdate());
 		}
@@ -42,6 +50,10 @@ namespace spk
 		{
 
 		}
+
+		bool isActive() {return (_isActive); }
+		void activate() { _isActive = true; }
+		void deactivate() {_isActive = false;}
 
 		template <typename TChildrenType, typename ... Args>
 		TChildrenType* addChildren(Args&& ...p_args)
@@ -74,6 +86,9 @@ namespace spk
 
 		const spk::Vector2Int& anchor() const { return (_anchor); }
 		const spk::Vector2Int& size() const { return (_size); }
+
+		Viewport* viewport() { return (&_viewport); }
+		const Viewport* viewport() const { return (&_viewport); }
 
 	};
 }
